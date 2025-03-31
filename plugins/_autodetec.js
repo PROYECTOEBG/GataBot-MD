@@ -43,7 +43,15 @@ await this.sendMessage(m.chat, { text: lenguajeGB['smsAvisoIIG']() + mid.smsAuto
 let subject = groupMetadata.subject
 let descs = groupMetadata.desc || "😻 𝗦𝘂𝗽𝗲𝗿 𝗚𝗮𝘁𝗮𝗕𝗼𝘁-𝗠𝗗 😻";
 let userName = `${m.messageStubParameters[0].split`@`[0]}`;
-let defaultWelcome = `*╭┈⊰* ${subject} *⊰┈ ✦*\n*┊✨ BIENVENIDO(A)!!*\n┊💖 @${userName}\n┊📄 *LEA LA DESCRIPCIÓN DEL GRUPO*\n*╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ ✦*\n${descs}`;
+let defaultWelcome = `*╔══════════════*
+*╟* *BIENVENIDO*
+*╟* ${subject}
+*╟👤@${userName}* 
+*╟📄𝐼𝑁𝐹𝑂𝑅𝑀𝐴𝐶𝐼𝑂́𝑁:*
+
+${descs}
+
+*╚══════════════*`;
 let textWel = chat.sWelcome ? chat.sWelcome
 .replace(/@user/g, `@${userName}`)
 .replace(/@group/g, subject) 
@@ -66,7 +74,10 @@ sourceUrl: [canal1, canal2, canal3, canal4, yt, grupo1, grupo2, grupo_collab1, g
 } else if (chat.welcome && (m.messageStubType == 28 || m.messageStubType == 32) && this.user.jid != global.conn.user.jid ) {
 let subject = groupMetadata.subject;
 let userName = `${m.messageStubParameters[0].split`@`[0]}`;
-let defaultBye = `*╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⊰*\n┊ @${userName}\n┊ *NO LE SABE AL GRUPO, CHAO!!* 😎\n*╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⊰*`;
+let defaultBye = `*╔══════════════*
+*╟* *SE FUE UNA BASURA*
+*╟👤@${userName}* 
+*╚══════════════*`;
 let textBye = chat.sBye ? chat.sBye
 .replace(/@user/g, `@${userName}`)
 .replace(/@group/g, subject)
